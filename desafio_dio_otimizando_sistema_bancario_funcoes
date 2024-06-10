@@ -84,7 +84,7 @@ def sacar(*, id_conta_corrente_acessar, valor):
     return conta
 
 
-def depositar(*, id_conta_corrente_acessar, valor):
+def depositar(id_conta_corrente_acessar, valor):
     conta = contas_correntes[id_conta_corrente_acessar]
 
     if valor <= 0:
@@ -111,7 +111,7 @@ def menu_funcoes(id_conta_corrente_acessar):
 
     if op == "1":
         valor = float(input("Digite o valor a ser depositado:"))
-        contas_correntes[id_conta_corrente_acessar] = depositar(id_conta_corrente_acessar=id_conta_corrente_acessar, valor=valor)
+        contas_correntes[id_conta_corrente_acessar] = depositar(id_conta_corrente_acessar, valor)
 
     elif op == "2":
         valor = float(input("Digite o valor a ser sacado:"))
